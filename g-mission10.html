@@ -4,8 +4,9 @@
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>翻牌記憶遊戲</title>
+    <meta name="description" content="國立故宮博物院-藝起冒險">
+    <meta name="author" content="國立故宮博物院">
+    <title>國立故宮博物院-藝起冒險</title>
     <style>
         * {
             margin: 0;
@@ -130,15 +131,15 @@ body {
 </head>
 <body data-new-gr-c-s-check-loaded="14.988.0" data-gr-ext-installed="" cz-shortcut-listen="true">
     <div class="wrap">
-        <div class="card" style=""><div class="front" data-type="3" style="background: url('./card/3.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="1" style="background: url('./card/1.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="3" style="background: url('./card/3.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="5" style="background: url('./card/5.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="5" style="background: url('./card/5.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="4" style="background: url('./card/4.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="2" style="background: url('./card/2.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="1" style="background: url('./card/1.PNG');"></div><div class="back" style=""></div></div>
-        <div class="card" style=""><div class="front" data-type="2" style="background: url('./card/2.PNG');"></div><div class="back" style=""></div></div>
+        <div class="card" style><div class="front" data-type="3" style="background: url('../card/3.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="1" style="background: url('../card/1.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="3" style="background: url('../card/3.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="5" style="background: url('../card/5.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="5" style="background: url('../card/5.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="4" style="background: url('../card/4.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="2" style="background: url('../card/2.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="1" style="background: url('../card/1.PNG');"></div><div class="back" style></div></div>
+        <div class="card" style><div class="front" data-type="2" style="background: url('../card/2.PNG');"></div><div class="back" style ></div></div>
         <!--<div class="card"><div class="front"></div><div class="back"></div></div>
         <div class="card"><div class="front"></div><div class="back"></div></div>
         <div class="card"><div class="front"></div><div class="back"></div></div>
@@ -204,7 +205,7 @@ body {
             for (i = 0; i < fronts.length; i++){
 
                 fronts[i].setAttribute("data-type",gameData[i]); //設定資料內容
-                fronts[i].style.background="url('./card/"+gameData[i]+".PNG')"; //設定背景圖
+                fronts[i].style.background="url('../card/"+gameData[i]+".png')"; //設定背景圖
           }
 
           //設定卡牌的點擊偵測事件
