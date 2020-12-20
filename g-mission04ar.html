@@ -79,7 +79,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
        
         <a-nft
-            type='nft' url='https://bavistyc.github.io/sNMH/img_desc/marker_1'
+            type='nft' url='https://bavistyc.github.io/NMHarweb/img_desc/google'
             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
 			<!-- åœ–ç‰‡-->
             <!-- <a-entity geometry="primitive:plane;" material="src:#img1" rotation="-90 0 0" scale="100 100 100"
@@ -100,3 +100,13 @@
   </div>
 </body>
 </html>
+<script>
+  AFRAME.registerComponent('markerhandler', {
+      init: function () {
+          this.el.sceneEl.addEventListener('markerFound', () => {
+              // redirect to custom URL e.g. google.com
+              window.location = 'https://www.google.com/';
+          })
+      }
+  });
+</script>
