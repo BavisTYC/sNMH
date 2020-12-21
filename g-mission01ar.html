@@ -89,9 +89,22 @@
     <a-scene vr-mode-ui='enabled: false;'
              renderer="logarithmicDepthBuffer: true;"
              embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-        <a-nft markerhandler type='nft' url='https://realitygame.azurewebsites.net/img_desc/marker_5'smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
-        <a-entity geometry="primitive:plane;" material="shader:gif;src:url(https://realitygame.azurewebsites.net/img_ar/img_5.gif);opacity:1" rotation="-90 0 0" scale="120 120 120" position="40 0 -120"></a-entity>
-        </a-nft>
+             <a-nft markerhandler
+             type='nft' url='https://bavistyc.github.io/sNMH/img_desc/google'
+             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
+       <!-- åœ–ç‰‡-->
+             <!-- <a-entity geometry="primitive:plane;" material="src:#img1" rotation="-90 0 0" scale="100 100 100"
+                 position="5 0 0"></a-entity>-->
+       <!--GIF-->
+            <a-entity >
+                 <a-image src="https://bavistyc.github.io/sNMH/img_ar/img_1.png"
+                 scale="250 250 250"
+                 position="70 0 -180"
+                 rotation="-90 0 0"
+                 crossorigin
+             ></a-image>
+            </a-entity>
+         </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
   </div>
