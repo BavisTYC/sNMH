@@ -63,6 +63,17 @@
     vertical-align: middle;
   }
 </style>
+<script>
+  AFRAME.registerComponent('markerhandler', {
+      init: function () {
+          this.el.sceneEl.addEventListener('markerFound', () => {
+              // redirect to custom URL e.g. google.com
+              window.location = 'g-mission01ok.html';
+              //alert("fount it !")
+          })
+      }
+  });
+</script>
 </head>
 
 
@@ -100,13 +111,3 @@
   </div>
 </body>
 </html>
-<script>
-  AFRAME.registerComponent('markerhandler', {
-      init: function () {
-          this.el.sceneEl.addEventListener('markerFound', () => {
-              // redirect to custom URL e.g. google.com
-              window.location = 'https://www.google.com/';
-          })
-      }
-  });
-</script>
