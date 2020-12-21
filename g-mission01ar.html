@@ -68,7 +68,7 @@
       init: function () {
           this.el.sceneEl.addEventListener('markerFound', () => {
               // redirect to custom URL e.g. google.com
-              window.location = 'https://www.google.com/';
+              window.location = 'g-mission01ok.html';
               //alert("fount it !")
           })
       }
@@ -84,7 +84,7 @@
   </div>
   <div class="tops">
     <div class="topic">
-      <a href="g-mission01ok.html">請掃描圖片</a> <img width="35" src="img/goback.png" alt="關閉羅盤" onclick="history.back()" style="margin-left: 10px;">
+      請掃描圖片<img width="35" src="img/goback.png" alt="關閉羅盤" onclick="history.back()" style="margin-left: 10px;">
     </div>
     <a-scene vr-mode-ui='enabled: false;'
              renderer="logarithmicDepthBuffer: true;"
@@ -99,7 +99,7 @@
             <a-entity >
                  <a-image src="https://bavistyc.github.io/sNMH/img_ar/img_1.png"
                  scale="250 250 250"
-                 position="70 0 -180"
+                 position="0 0 -180"
                  rotation="-90 0 0"
                  crossorigin
              ></a-image>
