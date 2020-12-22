@@ -39,7 +39,7 @@
     
   }
   .tops{
-    background-image:url('img/ar-camra.png'); 
+    background-image:url('img/ar-camra2.png'); 
     height: 100%;
     position: relative;
     /* background-color: rgb(238, 255, 0);  */
@@ -68,7 +68,8 @@
       init: function () {
           this.el.sceneEl.addEventListener('markerFound', () => {
               // redirect to custom URL e.g. google.com
-              window.location = 'g-mission03ok.html';
+              window.location = '#';
+              //window.location = 'g-mission03ok.html';
               //alert("fount it !")
           })
       }
@@ -90,16 +91,16 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
        
         <a-nft markerhandler
-            type='nft' url='https://bavistyc.github.io/sNMH/img_desc/google'
+            type='nft' url='https://bavistyc.github.io/sNMH/img_desc/marker_03'
             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
 			<!-- åœ–ç‰‡-->
             <!-- <a-entity geometry="primitive:plane;" material="src:#img1" rotation="-90 0 0" scale="100 100 100"
                 position="5 0 0"></a-entity>-->
 			<!--GIF-->
            <a-entity >
-                <a-image src="https://bavistyc.github.io/sNMH/img_ar/img_1.png"
+                <a-image src="https://bavistyc.github.io/sNMH/img_ar/marker_03.png"
                 scale="200 200 200"
-                position="70 0 0"
+                 position="20 0 -180"
                 rotation="-90 0 0"
                 crossorigin
             ></a-image>
