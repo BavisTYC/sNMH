@@ -308,7 +308,7 @@ img.ar-close{
 } */
 .mastfoot {
   
-  background-image:url('/img/footer-bg.png');
+  /*background-image:url('/img/footer-bg.png');*/
   background-repeat:repeat-x;
   height: 100px;
 }
