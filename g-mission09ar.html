@@ -9,7 +9,6 @@
     
     <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
     <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
-
     <script src="js/arjs.js"></script>
     <script src="js/aframe-gif-shader.js"></script>
 
@@ -92,13 +91,11 @@
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-       
         <a-nft
             type='nft' url='https://bavistyc.github.io/sNMH/img_desc/google'
             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
-           <a-entity geometry="primitive:plane;" material="shader:gif;src:url(img_ar/marker_05.gif);opacity:1" rotation="-90 0 0" scale="150 100 150" position="70 0 -50"></a-entity>
+           <a-entity geometry="primitive:plane;" material="shader:gif;src:url(img_ar/marker_5.gif);opacity:1" rotation="-90 0 0" scale="200 200 200" position="70 0 -180"> ></a-entity>
         </a-nft>
-
 		<a-entity camera></a-entity>
     </a-scene>
   </div>
