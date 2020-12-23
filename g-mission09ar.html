@@ -65,18 +65,18 @@
     vertical-align: middle;
   }
 </style>
-<!--script>
+<script>
   AFRAME.registerComponent('markerhandler', {
       init: function () {
           this.el.sceneEl.addEventListener('markerFound', () => {
               // redirect to custom URL e.g. google.com
-              window.location = '#';
-              // window.location = 'g-start03.html';
+              //window.location = '#';
+              window.location = 'g-start03.html';
               //alert("fount it !")
           })
       }
   });
-</script-->
+</script>
 </head>
 
 
@@ -91,7 +91,7 @@
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-        <a-nft
+        <a-nft markerhandler
             type='nft' url='https://bavistyc.github.io/sNMH/img_desc/google'
             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
            <a-entity geometry="primitive:plane;" material="shader:gif;src:url(img_ar/smarker_05.gif);opacity:1" rotation="-90 0 0" scale="150 150 150" position="70 0 -50"> ></a-entity>
