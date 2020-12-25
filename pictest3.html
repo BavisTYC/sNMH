@@ -50,8 +50,8 @@
                 .ui2 {
             position: absolute;
             z-index: 999;
-            top: 50px;
-            right: 0;
+            bottom: 250px;
+            left: 0;
             width: 100%;
             height: auto;
             margin: 0;
@@ -64,9 +64,9 @@
                 display: inline-block;
                 width: 80px;
                 height: 80px;
-                background-color: #00c3ff;
+                background-color: #375b5a;
                 line-height: 100%;
-                color: #303030;
+                color: #fff;
                 margin: 10px 3px;
                 border-radius: 50%;
                 position: relative;
@@ -74,7 +74,7 @@
                 margin-right: 20px;
             }
             .ui2 a.active {
-                background-color: #006f72;
+                background-color: #1aa397;
                 color: #fff;
             }
             .ui2 span{
@@ -98,11 +98,12 @@
             position: fixed;
             top:0;
             left:0;
-            z-index: 900;
+            z-index: 90;
         }
         .ui a.disabled {
             pointer-events: none;
             color: #cccccc;
+            display: none;
         }
 
         #snap.visible {
@@ -119,7 +120,7 @@
         }
         .p-frame img{
             width:100vw;
-            height:100vh;
+            height:auto;
         }
     </style>
 </head>
@@ -139,6 +140,7 @@
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
     </div>
     <div class="ui2">
+        <h1>選擇圖框樣式</h1>
         <a href="" class="active"><span>1</span></a>
         <a href=""><span>2</span></a>
         <a href=""><span>3</span></a>
@@ -182,6 +184,7 @@
             
             delete_photo_btn.classList.remove("disabled");
             download_photo_btn.classList.remove("disabled");
+            
     
             download_photo_btn.href = snap;
         });
