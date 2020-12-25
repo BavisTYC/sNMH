@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
+    <title></title>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+
+        .ui {
+            position: absolute;
+            z-index: 100;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+            .ui a {
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+            }
+
+                .ui a i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+                .ui a:active {
+                    color: #ff0000;
+                }
+                .ui2 {
+            position: absolute;
+            z-index: 100;
+            bottom: 200px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+            .ui2 a {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+                text-decoration: none;
+                margin-right: 20px;
+            }
+            .ui2 span{
+                font-size: 40px;
+                line-height: 80px;
+            }
+        #snap {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            visibility: hidden;
+        }
+
+        #video {
+            -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        .ui a.disabled {
+            pointer-events: none;
+            color: #cccccc;
+        }
+
+        #snap.visible {
+            visibility: visible;
+        }
+        .material-icons{
+            font-size: 80px;
+        }
+    </style>
+</head>
+
+<body style="width: 100vm;height: 100vh; margin: 0; padding:0;">
+    <video id="video" muted playsinline autoplay style="width: 100vm;height: 100vh;display: block; background: rgba(0,0,0,0.5);"></video>
+
+    <div class="ui">
+        <img id="snap">
+        <a href="" id="turnCam"><i class="material-icons">undo</i></a>
+        <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+        <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
+    </div>
+    <div class="ui2">
+        <a href=""><span>1</span></a>
+        <a href=""><span>2</span></a>
+        <a href=""><span>3</span></a>
+    </div>
+    <script>
+        var image = document.querySelector('#snap');
+        var take_photo_btn = document.querySelector('#take-photo');
+        var delete_photo_btn = document.querySelector('#delete-photo');
+        var download_photo_btn = document.querySelector('#download-photo');
+    
+        // 切換內鏡頭
+        var front = false;
+        var turnCam = document.querySelector('#turnCam');
+        turnCam.addEventListener("click", function (e) {
+            e.preventDefault();
+            front = !front;
+            //user 內鏡頭  environment 後鏡頭
+            var constraints = { video: { facingMode: (front ? "user" : "environment") } };
+            var video = document.querySelector('video');
+            video.style.transform = (front ? "rotateY(180deg)" :"");
+            console.log(video.style.transform)
+            navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+                video.srcObject = stream;
+            }).catch(error => {
+                console.log(error);
+            })
+            console.log(constraints);
+    
+        });
+    
+        take_photo_btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            var video = document.querySelector('video');
+            var snap = takeSnapshot(video);
+            // 拍照畫面反轉
+            //image.style.transform = (front ? "rotateY(180deg)" : "");
+            //var img = new Image();
+            //img.src = snap;
+            image.setAttribute('src', snap);
+            image.classList.add('visible');
+            
+            delete_photo_btn.classList.remove("disabled");
+            download_photo_btn.classList.remove("disabled");
+    
+            download_photo_btn.href = snap;
+        });
+    
+        delete_photo_btn.addEventListener("click", function (e) {
+    
+            e.preventDefault();
+    
+            image.setAttribute('src', "");
+            image.classList.remove("visible");
+    
+            delete_photo_btn.classList.add("disabled");
+            download_photo_btn.classList.add("disabled");
+        });
+    
+        function takeSnapshot(video) {
+    
+            var resizedCanvas = document.createElement("canvas");
+            var resizedContext = resizedCanvas.getContext("2d");
+            var width = video.videoWidth;
+            var height = video.videoHeight;
+            //resizedContext.translate(width / 2, height / 2)
+            console.log(resizedContext.width)
+            //resizedContext.scale(-1, 1);
+            //var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
+            if (width && height) {
+                resizedCanvas.width = width;
+                resizedCanvas.height = height;
+    
+                resizedContext.drawImage(video, 0, 0, width, height);
+    
+                if (width > height) {
+                    resizedContext.drawImage(video, 0, 0, width, height);
+                } else {
+                    var scale = height / width;
+                    var scaledWidth = height * scale;
+                    var marginLeft = (width - scaledWidth) / 2;
+                    resizedContext.drawImage(video, marginLeft, 0, scaledWidth, height);
+                }
+                //resizedContext.canvas.style.transform = (front ? "rotateY(180deg)" : "");
+                //console.log(resizedContext.canvas.style);
+                //console.log("resizedCanvas ==>",resizedCanvas);
+                //console.log("resizedContext ==>", resizedContext);
+    
+                var scaleH = front ? -1 : 1, // Set horizontal scale to -1 if flip horizontal
+                    scaleV = front ? -1 : 1, // Set verical scale to -1 if flip vertical
+                    posX = front ? width * -1 : 0, // Set x position to -100% if flip horizontal 
+                    posY = front ? height * -1 : 0; // Set y position to -100% if flip vertical
+                console.log("scaleH", scaleH);
+                console.log("scaleV", scaleV);
+                console.log("posX", posX);
+                console.log("posY" ,posY);
+                resizedContext.save();
+                resizedContext.scale(scaleH, 1);
+                resizedContext.drawImage(video, posX, 0, width, height)
+                resizedContext.restore();
+    
+                return resizedCanvas.toDataURL('image/png');
+            }
+        }
+    
+        //-->
+    </script>
+</body>
+</html>
