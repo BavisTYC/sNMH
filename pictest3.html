@@ -15,6 +15,15 @@
             overflow-y: hidden;
         }
 
+        body{
+            background-image:url('../img/background.png');
+            background-repeat:no-repeat;
+            -moz-background-size:cover;
+            -webkit-background-size:cover;
+            -o-background-size:cover;
+            background-size:cover;
+        }
+
         .ui {
             position: fixed;
             z-index: 999;
@@ -144,7 +153,7 @@
 
 <body>
     <div class="cameradiv">
-        <div class="p-frame">
+        <div id="photoFrame" class="p-frame">
             <img src="img/p-frame01.png" alt="">
         </div>
         <video id="video" style="width: 100%;height: auto" muted playsinline autoplay></video>
@@ -168,6 +177,7 @@
         var image = document.querySelector('#snap');
         var turnCam = document.querySelector('#turnCam');
         var take_photo_btn = document.querySelector('#take-photo');
+        var photoFrame = document.querySelector('#photoFrame');
         var delete_photo_btn = document.querySelector('#delete-photo');
         var download_photo_btn = document.querySelector('#download-photo');
 
@@ -208,6 +218,7 @@
 
             delete_photo_btn.classList.remove("disabled");
             download_photo_btn.classList.remove("disabled");
+            photoFrame.classList.add("disabled");
             turnCam.classList.add("disabled");
             take_photo_btn.classList.add("disabled");
 
@@ -224,6 +235,7 @@
 
             delete_photo_btn.classList.add("disabled");
             download_photo_btn.classList.add("disabled");
+            photoFrame.classList.remove("disabled");
             turnCam.classList.remove("disabled");
             take_photo_btn.classList.remove("disabled");
         });
