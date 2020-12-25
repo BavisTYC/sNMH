@@ -64,7 +64,7 @@
                 display: inline-block;
                 width: 80px;
                 height: 80px;
-                background-color: #8f0043;
+                background-color: #ffee00;
                 line-height: 100%;
                 color: #303030;
                 margin: 10px 3px;
@@ -102,12 +102,6 @@
         }
 
         #video {
-            width:100vw;
-            height: 100vh;
-            position: fixed;
-            top:0;
-            left:0;
-            z-index: 100;
         }
         .ui a.disabled {
             pointer-events: none;
@@ -134,11 +128,12 @@
 </head>
 
 <body>
+    <video id="video" style="width:100vw; height:100vh" muted playsinline autoplay ></video>
     <img id="snap">
     <div class="p-frame">
         <img src="img/p-frame01.png" alt="">
     </div>
-    <video id="video" muted playsinline autoplay ></video>
+    
     
     <div class="ui">
         <a href="" id="turnCam"><i class="material-icons">undo</i></a>
