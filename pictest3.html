@@ -15,7 +15,7 @@
 
         .ui {
             position: absolute;
-            z-index: 999;
+            z-index: 9999;
             bottom: 0;
             left: 0;
             width: 100%;
@@ -28,8 +28,8 @@
 
             .ui a {
                 display: inline-block;
-                width: 160px;
-                height: 160px;
+                width: 180px;
+                height: 180px;
                 background-color: #ffffff;
                 line-height: 100%;
                 color: #303030;
@@ -52,7 +52,7 @@
                 .ui2 {
             position: absolute;
             z-index: 999;
-            bottom: 180px;
+            bottom: 280px;
             left: 0;
             width: 100%;
             height: auto;
@@ -64,10 +64,10 @@
 
             .ui2 a {
                 display: inline-block;
-                width: 80px;
-                height: 80px;
+                width: 100px;
+                height: 100px;
                 background-color: #375b5a;
-                line-height: 100%;
+                line-height: 120px;
                 color: #fff;
                 margin: 10px 3px;
                 border-radius: 50%;
@@ -149,7 +149,6 @@
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
     </div>
     <div class="ui2">
-        <h1>選擇圖框樣式</h1>
         <a href="" class="active"><span>1</span></a>
         <a href=""><span>2</span></a>
         <a href=""><span>3</span></a>
@@ -210,6 +209,8 @@
     
             delete_photo_btn.classList.add("disabled");
             download_photo_btn.classList.add("disabled");
+            turnCam.classList.remove("disabled");
+            take_photo_btn.classList.remove("disabled");
         });
     
         function takeSnapshot(video) {
