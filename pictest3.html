@@ -68,6 +68,19 @@
                 text-decoration: none;
                 margin-right: 20px;
             }
+            .ui2 a.focus {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                background-color: #006f72;
+                line-height: 100%;
+                color: #fff;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+                text-decoration: none;
+                margin-right: 20px;
+            }
             .ui2 span{
                 font-size: 40px;
                 line-height: 80px;
@@ -97,12 +110,24 @@
         .material-icons{
             font-size: 80px;
         }
+        .p-frame{
+            position: absolute;
+            top:0;
+            left: 0;
+            z-index: 99;
+        }
+        .p-frame img{
+            width:100vm;
+            height:100vh;
+        }
     </style>
 </head>
 
-<body style="width: 100vm;height: 100vh; margin: 0; padding:0;">
-    <video id="video" muted playsinline autoplay style="width: 100vm;height: 100vh;display: block; background: rgba(0,0,0,0.5);"></video>
-
+<body style="width: 100vm;height: 100vh; margin: 0; padding:0; ">
+    <video id="video" muted playsinline autoplay style="width: 100vm;height: 100vh;display: block; background: rgba(0,0,0,0.1);"></video>
+    <div class="p-frame">
+        <img src="img/p-frame01.png" alt="">
+    </div>
     <div class="ui">
         <img id="snap">
         <a href="" id="turnCam"><i class="material-icons">undo</i></a>
