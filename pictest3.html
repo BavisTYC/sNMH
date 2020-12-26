@@ -16,14 +16,7 @@
         }
         body{
             
-            background-image:url('img/background.png');
-            background-repeat:no-repeat;
-            -moz-background-size:cover;
-            -webkit-background-size:cover;
-            -o-background-size:cover;
-            background-size:cover;
-            background-position: bottom;
-            background-attachment: fixed;
+            background: #333;
         }
 
         .ui {
@@ -34,15 +27,15 @@
             width: 100%;
             height: auto;
             margin: 0;
-            padding: 10px 15px 30px;
+            padding: 20px 25px ;
             text-align: center;
             box-sizing: border-box;
         }
 
         .ui a {
             display: inline-block;
-            width: 180px;
-            height: 180px;
+            width: 240px;
+            height: 240px;
             background-color: transparent;
             line-height: 100%;
             color: #fff;
@@ -50,12 +43,33 @@
             border-radius: 50%;
             position: relative;
         }
+        .ui a.sbtn {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            line-height: 100%;
+            color: #fff;
+            margin: 10px 3px;
+            border-radius: 50%;
+            position: absolute;
+            top:25%;
+            right:10%;
+        }
+
 
         .ui a i {
-            font-size: 150px;
+            font-size: 200px;
             position: absolute;
             top: 50%;
             left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .ui a i.small {
+            font-size: 100px;
+            position: absolute;
+            bottom: 0;
+            right:100%;
             transform: translate(-50%, -50%);
         }
 
@@ -167,8 +181,9 @@
 
 
     <div class="ui">
-        <a href="" id="turnCam"><i class="material-icons">undo</i></a>
-        <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
+       
+        <a href="#" id="delete-photo" title="Delete Photo" class="disabled sbtn"><i class="material-icons small">clear</i></a>
+        <a href="" id="turnCam" class="sbtn"><i class="material-icons small">flip_camera_android</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i
                 class="material-icons">file_download</i></a>
