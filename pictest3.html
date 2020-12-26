@@ -117,7 +117,7 @@
         #snap {
             width: 100vw;
             height: auto;
-            position: relative;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 900;
@@ -188,7 +188,7 @@
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i
                 class="material-icons">file_download</i></a>
     </div>
-    <div class="ui2">
+    <div class="ui2" id="pFrame">
         <a href="" class="active"><span>1</span></a>
         <a href=""><span>2</span></a>
         <a href=""><span>3</span></a>
@@ -200,6 +200,7 @@
         var photoFrame = document.querySelector('#photoFrame');
         var delete_photo_btn = document.querySelector('#delete-photo');
         var download_photo_btn = document.querySelector('#download-photo');
+        var pFrame = document.querySelector('#pFrame');
 
         // 切換內鏡頭
         var front = false;
@@ -241,6 +242,7 @@
             photoFrame.classList.add("disabled");
             turnCam.classList.add("disabled");
             take_photo_btn.classList.add("disabled");
+            pFrame.classList.add("disabled");
 
 
             download_photo_btn.href = snap;
@@ -258,6 +260,7 @@
             photoFrame.classList.remove("disabled");
             turnCam.classList.remove("disabled");
             take_photo_btn.classList.remove("disabled");
+            pFrame.classList.remove("disabled");
         });
 
         function takeSnapshot(video) {
