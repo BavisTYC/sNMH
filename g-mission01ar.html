@@ -70,6 +70,9 @@
     top:20px;
     left:25%;
   }
+  .disabled{
+    display: none;
+  }
 </style>
 <script>
   AFRAME.registerComponent('markerhandler', {
@@ -94,7 +97,7 @@
     <div>載入中， 請稍候...</div>
   </div>
   <div class="tops">
-    <img src="img_ar/marker_01.jpg" alt="" class="img-marker disabled">
+    <img src="img_ar/marker_01.jpg" id="img-marker" alt="" class="img-marker disabled">
     <div class="topic">
       請掃描圖片 <img width="35" src="img/goback.png" alt="關閉羅盤" onclick="history.back()" style="margin-left: 10px;">
     </div>
