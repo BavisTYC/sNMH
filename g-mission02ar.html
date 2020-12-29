@@ -62,6 +62,17 @@
   .topic img{
     vertical-align: middle;
   }
+  .img-marker{
+    width:50%;
+    height:auto;
+    position: absolute;
+    z-index: 999;
+    top:20px;
+    left:25%;
+  }
+  .disabled{
+    display: none;
+  }
 </style>
 <script>
   AFRAME.registerComponent('markerhandler', {
@@ -84,6 +95,7 @@
     <div>載入中， 請稍候...</div>
   </div>
   <div class="tops">
+    <img src="img_ar/marker_02.png" alt="" class="img-marker">
     <div class="topic">請掃描圖片 <img width="35" src="img/goback.png" alt="關閉羅盤" onclick="history.back()" style="margin-left: 10px;"></div>
     <a-scene
         vr-mode-ui='enabled: false;'
@@ -94,7 +106,7 @@
             type='nft' url='https://bavistyc.github.io/sNMH/img_desc/marker_02'
             smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
            <a-entity >
-                <a-image src="https://bavistyc.github.io/sNMH/img_ar/marker_02.png"
+                <a-image src="https://bavistyc.github.io/sNMH/img_ar/clear.png"
                 scale="200 200 200"
                  position="100 0 -180"
                 rotation="-90 0 0"
