@@ -208,7 +208,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
   padding: 0 1.5rem;
 }
 .cover3 {
-  padding: 3rem 3rem 0 3rem; ;
+  padding: 0rem 3rem 0 3rem; ;
 }
 .cover .btn-lg, .cover2 .btn-lg {
   padding: .75rem 1.25rem;
