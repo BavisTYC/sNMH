@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="國立故宮博物院-藝起冒險">
+    <meta name="author" content="國立故宮博物院">
+    <title>國立故宮博物院-藝起冒險</title>
+    
+    <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
+    <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat:no-repeat;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+
+  a-scene{
+    
+  }
+  .tops{
+    background-image:url('img/ar-camra3-1.png'); 
+    height: 100%;
+    position: relative;
+    /* background-color: rgb(238, 255, 0);  */
+    background-repeat:no-repeat;
+    background-position: center;
+    -moz-background-size: 55% auto;
+    -webkit-background-size:55% auto;
+    -o-background-size:55% auto;
+    background-size:55% auto;
+  }
+  .topic{
+      width:100%;
+      text-align: center;
+    position: absolute;
+    bottom:10px;
+    left:0;
+    z-index: 9999;
+    color:rgb(255, 255, 255);
+  }
+  .topic img{
+    vertical-align: middle;
+  }
+  .img-marker{
+    width:50%;
+    height:auto;
+    position: absolute;
+    z-index: 999;
+    top:20px;
+    left:25%;
+  }
+  .disabled{
+    display: none;
+  }
+</style>
+<script>
+  AFRAME.registerComponent('markerhandler', {
+      init: function () {
+          this.el.sceneEl.addEventListener('markerFound', () => {
+              // redirect to custom URL e.g. google.com
+              // window.location = '#';
+              window.location = 'g-mission02ok.html';
+              //alert("fount it !")
+          })
+      }
+  });
+</script>
+</head>
+
+
+
+<body style='margin : 0px; overflow: hidden;'>
+  <div class="arjs-loader">
+    <div>載入中， 請稍候...</div>
+  </div>
+  <div class="tops">
+    <img src="img_ar/marker_02.png" alt="" class="img-marker">
+    <div class="topic">請掃描圖片 <img width="35" src="img/goback.png" alt="關閉羅盤" onclick="history.back()" style="margin-left: 10px;"></div>
+    <a-scene
+        vr-mode-ui='enabled: false;'
+        renderer="logarithmicDepthBuffer: true;"
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+       
+        <a-nft markerhandler
+            type='nft' url='https://bavistyc.github.io/sNMH/img_desc/marker_02'
+            smooth='true' smoothCount='1' smoothTolerance='0.01' smoothThreshold='2'>
+           <a-entity >
+                <a-image src="https://bavistyc.github.io/sNMH/img_ar/clear.png"
+                scale="200 200 200"
+                 position="100 0 -180"
+                rotation="-90 0 0"
+                crossorigin
+            ></a-image>
+           </a-entity>
+        </a-nft>
+
+        
+
+		<a-entity camera></a-entity>
+    </a-scene>
+  </div>
+</body>
+</html>

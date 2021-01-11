@@ -93,7 +93,8 @@ h6.title {
   font-family: 'Noto Sans TC', serif;
   font-weight: 700 ;
   text-align: left;
-  line-height: 1.8rem;
+  font-size:1.1rem;
+  line-height: 1.3rem;
 }
 .form-control2{
   padding:.2rem .5rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem;
@@ -236,6 +237,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 .mission-img{
   padding: 0 0 5px 0;
+}
+.mission-img2{
+  padding: 0 20px 0 20px;
 }
 
 .video-container {
